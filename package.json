@@ -1,17 +1,55 @@
 {
   "name": "budget-bro",
+  "description": "An app to help you not go broke",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Mitchell Adair",
+    "email": "mitchwadair@gmail.com",
+    "url": "https://github.com/mitchwadair"
+  },
+  "build": {
+    "appId": "com.budgetbro.budget-bro",
+    "productName": "Budget Bro",
+    "copyright": "Copyright © 2019 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "zip"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
   "dependencies": {
+    "@rescripts/cli": "0.0.13",
+    "@rescripts/rescript-env": "0.0.11",
+    "concurrently": "^5.0.0",
+    "electron-is-dev": "^1.1.0",
+    "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "typescript": "^3.7.2",
+    "wait-on": "^3.3.0"
   },
+  "devDependencies": {
+    "electron": "^7.1.1",
+    "electron-builder": "^22.1.0"
+  },
+  "main": "public/electron.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
+    "eject": "rescripts eject",
+    "electron-dev": "concurrently \"SET BROWSER=none&&npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "npm run build",
+    "electron-pack": "electron-builder -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +65,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "./"
 }
