@@ -2,12 +2,18 @@ const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
+const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
+
 const path = require('path');
 const isDev = require('electron-is-dev');
 
 app.disableHardwareAcceleration()
 
 let mainWindow;
+
+installExtension(REACT_DEVELOPER_TOOLS)
+    .then((name) => console.log(`Added Extension:  ${name}`))
+    .catch((err) => console.log('An error occurred: ', err));
 
 function createWindow() {
   mainWindow = new BrowserWindow({
