@@ -28,11 +28,14 @@ export default function TitleBar({themeChange, theme}) {
 
     return (
         <div id='titlebar' className={"bb-title-bar"}>
+            <div style={{flex: 1}}/>
             <div className={"bb-title-bar-title"}>Budget Bro</div>
-            <div className={"bb-title-bar-buttons"}>
-                <TitleBarButton func={changeTheme} icon={themeIcon}/>
-                <TitleBarButton func={minimize} icon={minimizeIcon}/>
-                <TitleBarButton func={close} icon={closeIcon}/>
+            <div className={"bb-title-bar-buttons-container"}>
+                <div className={"bb-title-bar-buttons"}>
+                    <TitleBarButton func={changeTheme} icon={themeIcon}/>
+                    <TitleBarButton func={minimize} icon={minimizeIcon}/>
+                    <TitleBarButton func={close} icon={closeIcon}/>
+                </div>
             </div>
         </div>
     );

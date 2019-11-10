@@ -1,6 +1,8 @@
 @import '../../scss/util/variables.scss';
 
 .#{$prefix}-content {
+    width: 100%;
+    height: calc(100% - 24px);
     position: absolute;
     top: 24px;
 }
