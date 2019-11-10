@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import {Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import './App.scss';
 
 import TitleBar from './components/TitleBar/TitleBar.js';
 import Content from './components/Content/Content.js'
+
+import Home from './components/Pages/Home/Home';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -15,11 +17,13 @@ function App() {
   return (
     <div className={`App theme-${theme}`}>
       <TitleBar themeChange={handleSetTheme}/>
-      <Router>
-        <Content>
-          HELLO
-        </Content>
-      </Router>
+      <Content>
+        <Router>
+          <Switch>
+            <Route path='/' component={Home}/>
+          </Switch>
+        </Router>
+      </Content>
     </div>
   );
 }
