@@ -5,6 +5,8 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const isDev = require('electron-is-dev');
 
+app.disableHardwareAcceleration()
+
 let mainWindow;
 
 function createWindow() {
@@ -13,6 +15,7 @@ function createWindow() {
             nodeIntegration: true
         },
         show: false,
+        frame: false,
     });
     mainWindow.maximize();
     mainWindow.show();
