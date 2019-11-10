@@ -32,13 +32,15 @@
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "typescript": "^3.7.2",
     "wait-on": "^3.3.0"
   },
   "devDependencies": {
     "electron": "^7.1.1",
-    "electron-builder": "^22.1.0"
+    "electron-builder": "^22.1.0",
+    "electron-devtools-installer": "^2.2.4"
   },
   "main": "public/electron.js",
   "scripts": {

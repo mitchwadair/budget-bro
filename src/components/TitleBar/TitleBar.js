@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  {useState} from 'react';
 import './titlebar.scss';
 
 import {remote} from 'electron'
@@ -7,8 +7,12 @@ import TitleBarButton from './TitleBarButton/TitleBarButton';
 
 import closeIcon from '../../assets/icons/close.svg';
 import minimizeIcon from '../../assets/icons/minimize.svg';
+import themeDarkIcon from '../../assets/icons/theme-dark.svg';
+import themeLightIcon from '../../assets/icons/theme-light.svg'
 
-export default function TitleBar() {
+export default function TitleBar({themeChange, theme}) {
+    const [themeIcon, setThemeIcon] = useState(themeDarkIcon)
+
     const close = () => {
         remote.getCurrentWindow().close();
     }
@@ -17,10 +21,16 @@ export default function TitleBar() {
         remote.getCurrentWindow().minimize();
     }
 
+    const changeTheme = () => {
+        themeChange();
+        setThemeIcon(themeIcon === themeDarkIcon ? themeLightIcon : themeDarkIcon);
+    }
+
     return (
         <div id='titlebar' className={"bb-title-bar"}>
             <div className={"bb-title-bar-title"}>Budget Bro</div>
             <div className={"bb-title-bar-buttons"}>
+                <TitleBarButton func={changeTheme} icon={themeIcon}/>
                 <TitleBarButton func={minimize} icon={minimizeIcon}/>
                 <TitleBarButton func={close} icon={closeIcon}/>
             </div>

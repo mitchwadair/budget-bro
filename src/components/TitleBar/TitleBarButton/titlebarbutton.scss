@@ -6,7 +6,9 @@
     cursor: pointer;
 
     &:hover {
-        background-color: lightgrey;
+        @include themify($themes) {
+            background-color: themed('title-bar-button-hover');
+        }
     }
 }
 
@@ -15,5 +17,7 @@
     height: 100%;
     mask-image: var(--url);
     mask-size: contain;
-    background-color: var(--color);
+    @include themify($themes) {
+        background-color: themed('title-bar-button-icon');
+    }
 }
