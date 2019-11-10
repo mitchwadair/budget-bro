@@ -25,6 +25,11 @@
     }
 }
 
+.#{$prefix}-title-bar-icon-container {
+    flex: 1;
+    justify-self: flex-start;
+}
+
 .#{$prefix}-title-bar-buttons-container {
     flex: 1;
     display: flex;

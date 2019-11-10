@@ -6,6 +6,7 @@ $themes: (
     light: (
         app-background: $white,
         title-bar-background: $grey-10,
+        title-bar-icon: $green-50,
         title-bar-text: $grey-80,
         title-bar-button-hover: $grey-30,
         title-bar-button-icon: $grey-80,
@@ -13,6 +14,7 @@ $themes: (
     dark: (
         app-background: $grey-70,
         title-bar-background: $grey-80,
+        title-bar-icon: $green-10,
         title-bar-text: $grey-20,
         title-bar-button-hover: $grey-60,
         title-bar-button-icon: $grey-20,
