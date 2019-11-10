@@ -1,0 +1,19 @@
+@import '../../../scss/util/variables.scss';
+
+.#{$prefix}-title-bar-button {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lightgrey;
+    }
+}
+
+.#{$prefix}-title-bar-button-image {
+    width: 100%;
+    height: 100%;
+    mask-image: var(--url);
+    mask-size: contain;
+    background-color: var(--color);
+}

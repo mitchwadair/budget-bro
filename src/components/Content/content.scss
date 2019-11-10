@@ -1,0 +1,6 @@
+@import '../../scss/util/variables.scss';
+
+.#{$prefix}-content {
+    position: absolute;
+    top: 24px;
+}
