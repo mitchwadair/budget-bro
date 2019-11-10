@@ -5,7 +5,7 @@ import './App.scss';
 import TitleBar from './components/TitleBar/TitleBar.js';
 import Content from './components/Content/Content.js'
 
-import Home from './components/Pages/Home/Home';
+import Landing from './components/Pages/Landing/Landing';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -20,7 +20,7 @@ function App() {
       <Content>
         <Router>
           <Switch>
-            <Route path='/' component={Home}/>
+            <Route path='/' component={Landing}/>
           </Switch>
         </Router>
       </Content>

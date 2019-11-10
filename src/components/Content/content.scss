@@ -5,4 +5,8 @@
     height: calc(100% - 24px);
     position: absolute;
     top: 24px;
+
+    @include themify($themes) {
+        background-color: themed('app-background');
+    }
 }
