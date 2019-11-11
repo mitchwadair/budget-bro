@@ -5,9 +5,10 @@
     display: inline-block;
     vertical-align: middle;
     padding: 10px;
-    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
     border-style: none;
-    user-select: none;
 
     @include themify($themes) {
         background-color: themed('button');

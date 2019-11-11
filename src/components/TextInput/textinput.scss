@@ -1,0 +1,31 @@
+@import '../../scss/util/variables.scss';
+
+.#{$prefix}-text-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 10px;
+}
+
+.#{$prefix}-text-input-label {
+    align-self: flex-start;
+}
+
+.#{$prefix}-text-input {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font: inherit;
+    font-size: 15px;
+
+    @include themify($themes) {
+        border-color: themed('text-input-border');
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
