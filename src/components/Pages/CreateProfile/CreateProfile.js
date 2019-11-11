@@ -14,9 +14,18 @@ const {prefix} = settings;
 
 export default function CreateProfile(props) {
     const history = useHistory();
+    const [inputData, setInputData] = useState({});
     
     const goBack = () => {
         history.push("/");
+    }
+
+    const submit = () => {
+        console.log(inputData);
+    }
+
+    const setInputValue = (data, key) => {
+        setInputData({...inputData, [key]: data})
     }
     
     return (
@@ -24,12 +33,12 @@ export default function CreateProfile(props) {
             <Logo width={'100px'} height={'100px'}/>
             Create Profile
             <div className={`${prefix}-pc-input-container`}>
-                <TextInput label="Profile Name"/>
-                <TextInput label="Annual Income"/>
+                <TextInput label="Profile Name" callback={setInputValue} id="profile_name"/>
+                <TextInput label="Annual Income" callback={setInputValue} id="annual_income"/>
             </div>
             <div className={`${prefix}-pc-button-container`}>
                 <Button onClick={goBack}>Go Back</Button>
-                <Button onClick={() => {devLog("submit clicked")}}>Submit</Button>
+                <Button onClick={submit}>Submit</Button>
             </div>
         </Page>
     );
