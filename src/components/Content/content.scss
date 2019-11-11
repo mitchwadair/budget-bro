@@ -1,6 +1,7 @@
 @import '../../scss/util/variables.scss';
 
 .#{$prefix}-content {
+    cursor: default;
     width: 100%;
     height: calc(100% - 24px);
     position: absolute;
@@ -8,5 +9,6 @@
 
     @include themify($themes) {
         background-color: themed('app-background');
+        color: themed('text');
     }
 }

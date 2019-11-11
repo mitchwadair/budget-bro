@@ -1,0 +1,12 @@
+@import '../../scss/util/variables.scss';
+
+.#{$prefix}-logo {
+    width: var(--width);
+    height: var(--height);
+
+    mask-image: url('../../assets/icons/money.svg');
+    mask-size: contain;
+    @include themify($themes) {
+        background-color: themed('logo');
+    }
+}

@@ -1,0 +1,22 @@
+@import '../../scss/util/variables.scss';
+
+.#{$prefix}-button {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: none;
+    user-select: none;
+
+    @include themify($themes) {
+        background-color: themed('button');
+        color: themed('button-text');
+    }
+
+    &:focus, &:active {
+        @include themify($themes) {
+            background-color: themed('button-focus');
+        }
+    }
+}

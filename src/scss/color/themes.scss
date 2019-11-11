@@ -5,6 +5,11 @@
 $themes: (
     light: (
         app-background: $white,
+        logo: $green-50,
+        text: $grey-80,
+        button: $green-50,
+        button-focus: $green-30,
+        button-text: $white,
         title-bar-background: $grey-10,
         title-bar-icon: $green-50,
         title-bar-text: $grey-80,
@@ -13,6 +18,11 @@ $themes: (
     ),
     dark: (
         app-background: $grey-70,
+        logo: $green-10,
+        text: $grey-20,
+        button: $green-10,
+        button-focus: $green-30,
+        button-text: $grey-80,
         title-bar-background: $grey-80,
         title-bar-icon: $green-10,
         title-bar-text: $grey-20,
