@@ -6,6 +6,7 @@ import './landing.scss'
 
 import { devLog } from '../../../utils.js';
 
+import Page from '../Page';
 import Logo from '../../Logo/Logo';
 import Button from '../../Button/Button';
 
@@ -44,12 +45,10 @@ export default function Landing(props) {
         </div>;
 
     return (
-        <div className={"bb-landing-page"}>
-            <div className={"bb-landing-page-spacing"}/>
+        <Page>
             <Logo width={'100px'} height={'100px'}/>
             <div className={"bb-landing-page-title"}>Budget Bro</div>
             {content}
-            <div className={"bb-landing-page-spacing"}/>
-        </div>
+        </Page>
     );
 }
