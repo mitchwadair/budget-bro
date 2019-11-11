@@ -7,6 +7,6 @@ const {prefix} = settings;
 
 export default function Button({onClick, children}) {
     return (
-        <div className={`${prefix}-button`} onClick={onClick}>{children}</div>
+        <div className={`${prefix}-button`} onClick={onClick}>{children}</div> 
     );
 }
