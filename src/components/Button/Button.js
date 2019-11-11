@@ -1,9 +1,12 @@
 import React from 'react';
+import settings from '../../settings';
 
 import './button.scss';
 
-export default function Button({onClick, label}) {
+const {prefix} = settings;
+
+export default function Button({onClick, children}) {
     return (
-        <div className={"bb-button"} onClick={onClick}>{label}</div>
+        <div className={`${prefix}-button`} onClick={onClick}>{children}</div>
     );
 }

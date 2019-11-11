@@ -6,6 +6,7 @@ import TitleBar from './components/TitleBar/TitleBar.js';
 import Content from './components/Content/Content.js'
 
 import Landing from './components/Pages/Landing/Landing';
+import CreateProfile from './components/Pages/CreateProfile/CreateProfile';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -20,7 +21,8 @@ function App() {
       <Content>
         <Router>
           <Switch>
-            <Route path='/' component={Landing}/>
+            <Route exact path='/' component={Landing}/>
+            <Route path='/createProfile' component={CreateProfile}/>
           </Switch>
         </Router>
       </Content>

@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
+import settings from '../../settings';
+
 import './page.scss'
+
+const {prefix} = settings;
 
 export default function Page({children}) {
     return (
-        <div className={"bb-page"}>
-            <div className={"bb-page-spacing"}/>
+        <div className={`${prefix}-page`}>
+            <div className={`${prefix}-page-spacing-top`}/>
             {children}
-            <div className={"bb-page-spacing"}/>
+            <div className={`${prefix}-page-spacing-bottom`}/>
         </div>
     );
 }

@@ -10,5 +10,11 @@
 }
 
 .#{$prefix}-page-spacing {
-    flex-grow: 1;
+    &-top {
+        flex-grow: 1;
+    }
+
+    &-bottom {
+        flex-grow: 2;
+    }
 }

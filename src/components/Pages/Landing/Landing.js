@@ -1,17 +1,22 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom'
 import {remote} from 'electron';
 import fs from 'fs';
 import path from 'path';
 import './landing.scss'
 
-import { devLog } from '../../../utils.js';
+import { devLog } from '../../../utils';
+import settings from '../../../settings';
 
 import Page from '../Page';
 import Logo from '../../Logo/Logo';
 import Button from '../../Button/Button';
 
+const {prefix} = settings;
+
 export default function Landing(props) {
     const [profiles, setProfiles] = useState(null);
+    const history = useHistory();
 
     const getProfiles = () => {
         const currentDir = remote.app.getAppPath();
@@ -32,14 +37,14 @@ export default function Landing(props) {
     };
 
     const buttonOnClick = () => {
-        devLog("button clicked");
+        history.push("/createProfile");
     }
 
     getProfiles();
 
     const content = profiles === null ? <div>
             <div style={{padding: '15px'}}>It looks like there are no budgeting profiles created on this machine!</div>
-            <Button onClick={buttonOnClick} label={"Create a Profile"}/>
+            <Button onClick={buttonOnClick}>Create a Profile</Button>
         </div> : <div>
             profiles
         </div>;
@@ -47,7 +52,7 @@ export default function Landing(props) {
     return (
         <Page>
             <Logo width={'100px'} height={'100px'}/>
-            <div className={"bb-landing-page-title"}>Budget Bro</div>
+            <div className={`${prefix}-landing-page-title`}>Budget Bro</div>
             {content}
         </Page>
     );
