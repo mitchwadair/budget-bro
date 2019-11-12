@@ -25,7 +25,7 @@
     color: inherit;
 
     @include themify($themes) {
-        border-color: themed('text-input-border');
+        border-color: themed('input-border');
     }
 
     &:focus {
