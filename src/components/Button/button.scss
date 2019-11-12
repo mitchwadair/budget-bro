@@ -7,16 +7,16 @@
     vertical-align: middle;
     top: 0;
     left: 0;
-    padding: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 5px;
+    padding: .5rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    border-radius: .25rem;
     border-style: none;
 
     @include themify($themes) {
         background-color: themed('button');
         color: themed('button-text');
-        box-shadow: 2px 2px themed('button-drop');
+        box-shadow: .125rem .125rem themed('button-drop');
     }
 
     &:focus, &:active {
@@ -24,7 +24,7 @@
         left: 1px;
         @include themify($themes) {
             background-color: themed('button-focus');
-            box-shadow: 1px 1px themed('button-drop');
+            box-shadow: 0 0 themed('button-drop');
         }
     }
 }

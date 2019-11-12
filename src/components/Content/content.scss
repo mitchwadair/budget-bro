@@ -3,9 +3,9 @@
 .#{$prefix}-content {
     cursor: default;
     width: 100%;
-    height: calc(100% - 24px);
+    height: calc(100% - 1.5rem);
     position: absolute;
-    top: 24px;
+    top: 1.5rem;
 
     @include themify($themes) {
         background-color: themed('app-background');

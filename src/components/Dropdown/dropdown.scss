@@ -6,12 +6,12 @@
     justify-content: center;
     align-items: center;
 
-    padding-top: 8px;
+    padding-top: .5rem;
 }
 
 .#{$prefix}-dropdown-label {
     align-self: flex-start;
-    padding-bottom: 4px;
+    padding-bottom: .25rem;
 }
 
 .#{$prefix}-dropdown-select {
@@ -21,19 +21,19 @@
     
 .#{$prefix}-dropdown-selected {
     margin-right: auto;
-    padding-left: 8px;
+    padding-left: .5rem;
 }
 
 .#{$prefix}-dropdown-selected-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-width: 2px;
+    border-width: .125rem;
     border-style: solid;
-    border-radius: 10px;
-    padding: 5px 0;
+    border-radius: .5rem;
+    padding: .25rem 0;
     font: inherit;
-    font-size: 15px;
+    font-size: 1rem;
     background-color: inherit;
     color: inherit;
 
@@ -50,9 +50,9 @@
 
 .#{$prefix}-dropdown-chevron {
     align-self: center;
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
+    width: 1rem;
+    height: 1rem;
+    margin-right: .5rem;
     mask-image: url('../../assets/icons/chevron-down.svg');
     mask-size: contain;
     @include themify($themes) {
@@ -68,19 +68,18 @@
         visibility: visible;
         position: absolute;
         top: 0;
-        width: calc(100% - 4px);
-        max-height: 128px;
+        width: calc(100% - .125rem);
+        max-height: 8rem;
         overflow-y: scroll;
         z-index: 2;
-        padding: 8px 0;
-        border-width: 2px;
+        padding: .5rem 0;
+        border-width: .125rem;
         border-style: solid;
-        border-radius: 10px;
+        border-radius: .5rem;
 
         @include themify($themes) {
             background-color: themed('select-menu-background');
             border-color: themed('input-border');
-            //box-shadow: 2px 4px 4px themed('box-shadow');
         }
 
         &::-webkit-scrollbar {
@@ -91,7 +90,7 @@
 }
 
 .#{$prefix}-dropdown-option {
-    padding: 4px 0 4px 8px;
+    padding: .25rem 0 .25rem .5rem;
     text-align: left;
 
     &:hover {
