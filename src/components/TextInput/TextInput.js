@@ -5,9 +5,9 @@ import './textinput.scss';
 
 const {prefix} = settings;
 
-export default function TextInput({label, callback, id}) {
+export default function TextInput({label, onChange, id}) {
     const updateFormState = (data) => {
-        callback(data, id)
+        onChange(data, id)
     }
     
     return (

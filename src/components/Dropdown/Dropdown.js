@@ -6,7 +6,7 @@ import { devLog } from '../../utils';
 
 const {prefix} = settings;
 
-export default function Dropdown({options, label, callback, id}) {
+export default function Dropdown({options, label, onChange, id}) {
     const [selected, setSelected] = useState(options[0]);
     const [menuVisible, setMenuVisible] = useState(false);
     const node = useRef();
@@ -27,7 +27,7 @@ export default function Dropdown({options, label, callback, id}) {
 
     const changeSelected = (selected) => {
         setSelected(selected);
-        callback(selected.value, id);
+        onChange(selected.value, id);
     }
 
     const handleClick = (event) => {
