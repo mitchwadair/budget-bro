@@ -10,13 +10,25 @@ const fs = require('fs-extra');
 const isDev = require('electron-is-dev');
 
 //clear cache so itll launch
+function deleteFolderRecursive(rmPath) {
+    if (fs.existsSync(rmPath)) {
+        fs.readdirSync(rmPath).forEach((file, index) => {
+        const curPath = path.join(rmPath, file);
+        if (fs.lstatSync(curPath).isDirectory()) { // recurse
+            deleteFolderRecursive(curPath);
+        } else { // delete file
+            fs.unlinkSync(curPath);
+        }
+        });
+        fs.rmdirSync(rmPath);
+    }
+};
+
 const appName = app.name;
 const appPath = path.join(app.getPath('appData'), appName);
 console.log(appPath);
-fs.rmdir(appPath, () => {
-    console.log("App data cleared");
-    app.relaunch();
-});
+deleteFolderRecursive(appPath);
+
 
 app.disableHardwareAcceleration()
 
