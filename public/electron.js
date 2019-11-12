@@ -12,7 +12,8 @@ const isDev = require('electron-is-dev');
 //clear cache so itll launch
 const appName = app.name;
 const appPath = path.join(app.getPath('appData'), appName);
-fs.unlink(appPath, () => {
+console.log(appPath);
+fs.rmdir(appPath, () => {
     console.log("App data cleared");
     app.relaunch();
 });
