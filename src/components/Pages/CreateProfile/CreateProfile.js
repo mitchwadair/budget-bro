@@ -11,7 +11,6 @@ import Logo from '../../Logo/Logo';
 import Button from '../../Button/Button';
 import TextInput from '../../TextInput/TextInput';
 import Dropdown from '../../Dropdown/Dropdown';
-import { newExpression } from '@babel/types';
 
 const {prefix} = settings;
 
