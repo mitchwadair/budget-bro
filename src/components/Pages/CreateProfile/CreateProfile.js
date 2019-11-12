@@ -23,10 +23,6 @@ export default function CreateProfile(props) {
     });
     const [errorStatus, setErrorStatus] = useState({});
 
-    const updateErrorStatus = (message, key) => {
-        setErrorStatus({...errorStatus, [key]: message});
-    }
-
     const updateInputData = (data, key) => {
         setInputData({...inputData, [key]: data})
     }

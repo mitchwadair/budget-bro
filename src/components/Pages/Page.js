@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import settings from '../../settings';
 
 import './page.scss'

@@ -1,8 +1,7 @@
-import React, {useState, useEffect, useLayoutEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import settings from '../../settings';
 
 import './dropdown.scss';
-import { devLog } from '../../utils';
 
 const {prefix} = settings;
 
