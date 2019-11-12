@@ -1,5 +1,10 @@
 @import '../../../scss/util/variables.scss';
 
+.#{$prefix}-pc-form-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .#{$prefix}-pc-input-container {
     display: flex;
     flex-direction: column;

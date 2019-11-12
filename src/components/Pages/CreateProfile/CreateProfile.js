@@ -102,13 +102,17 @@ export default function CreateProfile(props) {
         <Page>
             <Logo width={'100px'} height={'100px'}/>
             Create Profile
-            <div className={`${prefix}-pc-input-container`}>
-                <TextInput label="Profile Name" callback={updateInputData} id="profile_name"/>
-                <Dropdown label="Income Type" options={incomeTypeOptions} callback={updateInputData} id="income_type"/>
-                {incomeInput}
-                <TextInput label="Expected Additional Income" callback={updateInputData} id="additional_income"/>
-                <Dropdown label="Home State" options={stateOptions} callback={updateInputData} id="home_state"/>
-                <Dropdown label="Tax Filing Status" options={filingStatusOptions} callback={updateInputData} id="filing_status"/>
+            <div className={`${prefix}-pc-form-container`}>
+                <div className={`${prefix}-pc-input-container`}>
+                    <TextInput label="Profile Name" callback={updateInputData} id="profile_name"/>
+                    <Dropdown label="Home State" options={stateOptions} callback={updateInputData} id="home_state"/>
+                    <Dropdown label="Tax Filing Status" options={filingStatusOptions} callback={updateInputData} id="filing_status"/>
+                </div>
+                <div className={`${prefix}-pc-input-container`}>
+                    <Dropdown label="Income Type" options={incomeTypeOptions} callback={updateInputData} id="income_type"/>
+                    {incomeInput}
+                    <TextInput label="Expected Additional Income" callback={updateInputData} id="additional_income"/>
+                </div>
             </div>
             <div className={`${prefix}-pc-button-container`}>
                 <Button onClick={goBack}>Go Back</Button>
