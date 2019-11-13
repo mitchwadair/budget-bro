@@ -4,3 +4,9 @@
     font-size: 3rem;
     padding-bottom: 1rem;
 }
+
+.#{$prefix}-landing-page-profiles-container {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+}
