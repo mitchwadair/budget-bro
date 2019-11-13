@@ -53,7 +53,7 @@ export default function Landing(props) {
             <Button onClick={buttonOnClick}>Create a Profile</Button>
         </div> : <div>
             {profiles.map((profile, i) => {
-                return <ProfileCard key={i} onClick={console.log("profile clicked")} profileFolder={profile}/>
+                return <ProfileCard key={i} onClick={console.log("profile clicked")} profileFolder={profile}/>;
             })}
         </div>;
 
