@@ -31,11 +31,8 @@ export default function Landing(props) {
             const contents = fs.readdirSync(dataDir);
             if (contents.length > 0) {
                 devLog("profiles exist, loading...");
-                const profilesToSet = contents.map((item) => {
-                        const itemPath = path.join(dataDir, item);
-                        if (fs.lstatSync(itemPath).isDirectory()) {
-                            return itemPath;
-                        }
+                const profilesToSet = contents.filter((item) => {
+                        return fs.lstatSync(path.join(dataDir, item)).isDirectory();
                     });
                 setProfiles(profilesToSet);
             } else {
@@ -55,8 +52,8 @@ export default function Landing(props) {
             <div style={{padding: '15px'}}>It looks like there are no budgeting profiles created on this machine!</div>
             <Button onClick={buttonOnClick}>Create a Profile</Button>
         </div> : <div>
-            {profiles.map((profile) => {
-                return <ProfileCard onClick={console.log("profile clicked")} profileFolder={profile}/>
+            {profiles.map((profile, i) => {
+                return <ProfileCard key={i} onClick={console.log("profile clicked")} profileFolder={profile}/>
             })}
         </div>;
 
