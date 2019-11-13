@@ -1,0 +1,94 @@
+@import '../../scss/util/variables.scss';
+
+.#{$prefix}-notification-container {
+    display: none;
+    
+    flex-direction: row;
+    align-items: center;
+    height: 2rem;
+    border-style: solid;
+    border-width: .125rem;
+    border-radius: .25rem;
+
+    &.visible {
+        display: flex;
+    }
+
+    &.error {
+        @include themify($themes) {
+            background-color: themed('notification-error-background');
+            color: themed('notification-error-text');
+            border-color: themed('notification-error-border');
+        }
+
+        .#{$prefix}-notification-icon-container {
+            @include themify($themes) {
+                background-color: themed('notification-error-icon');
+                border-right-color: themed('notification-error-border');
+            }
+        }
+
+        .#{$prefix}-notification-icon {
+            mask-image: url('../../assets/icons/error.svg');
+        }
+    }
+
+    &.generic {
+        @include themify($themes) {
+            background-color: themed('notification-generic-background');
+            color: themed('notification-generic-text');
+            border-color: themed('notification-generic-border');
+        }
+
+        .#{$prefix}-notification-icon-container {
+            @include themify($themes) {
+                background-color: themed('notification-generic-icon');
+                border-right-color: themed('notification-generic-border');
+            }
+        }
+
+        .#{$prefix}-notification-icon {
+            mask-image: url('../../assets/icons/exclamation.svg');
+        }
+    }
+}
+
+.#{$prefix}-notification-content {
+    margin-left: .25rem;
+    margin-right: auto;
+    font-size: .75rem;
+    word-wrap: break-word;
+}
+
+.#{$prefix}-notification-icon-container {
+    display: flex;
+    align-items: center;
+    width: 2rem;
+    height: 100%;
+    border-right-width: .125rem;
+    border-right-style: solid;
+}
+
+.#{$prefix}-notification-icon {
+    margin: auto;
+    width: 75%;
+    height: 75%;
+    mask-size: contain;
+    background-color: $white;
+}
+
+.#{$prefix}-notification-close {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin-right: .25rem;
+    mask-image: url('../../assets/icons/close.svg');
+    mask-size: contain;
+    background-color: $white;
+
+    &.closable {
+        visibility: visible;
+        width: 1rem;
+        height: 1rem;
+    }
+}
