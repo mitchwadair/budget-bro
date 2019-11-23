@@ -13,7 +13,7 @@
     height: 1.5rem;
 
     @include themify($themes) {
-        background-color: themed('title-bar-background');
+        background-color: themed('background-border');
     }
 }
 
@@ -21,7 +21,7 @@
     cursor: default;
 
     @include themify($themes) {
-        color: themed('title-bar-text');
+        color: themed('text');
     }
 }
 

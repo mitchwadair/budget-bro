@@ -8,7 +8,7 @@
     top: 1.5rem;
 
     @include themify($themes) {
-        background-color: themed('app-background');
+        background-color: themed('background');
         color: themed('text');
     }
 }

@@ -14,17 +14,17 @@
     border-style: none;
 
     @include themify($themes) {
-        background-color: themed('button');
-        color: themed('button-text');
-        box-shadow: .125rem .125rem themed('button-drop');
+        background-color: themed('color-primary');
+        color: themed('text-secondary');
+        box-shadow: .125rem .125rem themed('color-shadow');
     }
 
     &:focus, &:active {
         top: 1px;
         left: 1px;
         @include themify($themes) {
-            background-color: themed('button-focus');
-            box-shadow: 0 0 themed('button-drop');
+            background-color: themed('color-secondary');
+            box-shadow: 0 0 themed('color-shadow');
         }
     }
 }

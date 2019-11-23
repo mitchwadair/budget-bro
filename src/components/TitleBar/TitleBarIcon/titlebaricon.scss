@@ -11,6 +11,6 @@
     mask-image: var(--url);
     mask-size: contain;
     @include themify($themes) {
-        background-color: themed('title-bar-icon');
+        background-color: themed('logo');
     }
 }

@@ -38,12 +38,12 @@
     color: inherit;
 
     @include themify($themes) {
-        border-color: themed('input-border');
+        border-color: themed('background-border');
     }
 
     &:hover {
         @include themify($themes) {
-            background-color: themed('select-hovered');
+            background-color: themed('background-hovered');
         }
     }
 }
@@ -78,7 +78,7 @@
         border-radius: .5rem;
 
         @include themify($themes) {
-            background-color: themed('select-menu-background');
+            background-color: themed('background');
             border-color: themed('input-border');
         }
 
@@ -95,7 +95,7 @@
 
     &:hover {
         @include themify($themes) {
-            background-color: themed('select-option-hover');
+            background-color: themed('background-hover');
         }
     }
 }

@@ -17,14 +17,14 @@
     &.error {
         @include themify($themes) {
             background-color: themed('notification-error-background');
-            color: themed('notification-error-text');
-            border-color: themed('notification-error-border');
+            color: themed('notification-error-color');
+            border-color: themed('notification-error-color');
         }
 
         .#{$prefix}-notification-icon-container {
             @include themify($themes) {
-                background-color: themed('notification-error-icon');
-                border-right-color: themed('notification-error-border');
+                background-color: themed('notification-error-color');
+                border-right-color: themed('notification-error-color');
             }
         }
 
@@ -36,14 +36,14 @@
     &.generic {
         @include themify($themes) {
             background-color: themed('notification-generic-background');
-            color: themed('notification-generic-text');
-            border-color: themed('notification-generic-border');
+            color: themed('notification-generic-color');
+            border-color: themed('notification-generic-color');
         }
 
         .#{$prefix}-notification-icon-container {
             @include themify($themes) {
-                background-color: themed('notification-generic-icon');
-                border-right-color: themed('notification-generic-border');
+                background-color: themed('notification-generic-color');
+                border-right-color: themed('notification-generic-color');
             }
         }
 
