@@ -48,10 +48,10 @@ export default function Landing(props) {
         history.push("/createProfile");
     }
 
-    const content = profiles === null ? <div>
+    const content = profiles === null ? <div className={`${prefix}-landing-page-profiles-container`}>
             <div style={{padding: '15px'}}>It looks like there are no budgeting profiles created on this machine!</div>
             <Button onClick={buttonOnClick}>Create a Profile</Button>
-        </div> : <div>
+        </div> : <div className={`${prefix}-landing-page-profiles-container`}>
             {profiles.map((profile, i) => {
                 return <ProfileCard key={i} onClick={console.log("profile clicked")} profileFolder={profile}/>;
             })}
@@ -61,9 +61,7 @@ export default function Landing(props) {
         <Page>
             <Logo width={'100px'} height={'100px'}/>
             <div className={`${prefix}-landing-page-title`}>Budget Bro</div>
-            <div className={`${prefix}-landing-page-profiles-container`}>
-                {content}
-            </div>
+            {content}
         </Page>
     );
 }
