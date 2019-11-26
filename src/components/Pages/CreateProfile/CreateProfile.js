@@ -144,7 +144,7 @@ export default function CreateProfile(props) {
                 }
                 const filePath = path.join(profileDir, "profile_data.json");
                 fs.writeFileSync(filePath, JSON.stringify(profileData, null, 4));
-                history.push("/");
+                history.push(`/dashboard/${newDirName}`);
             }).catch((error) => {
                 devLog(error);
             });
