@@ -198,7 +198,7 @@ export default function CreateProfile(props) {
 
     return (
         <Page>
-            <Logo width={'100px'} height={'100px'}/>
+            <Logo width={'7rem'} height={'7rem'}/>
             <span style={{textAlign: 'center'}}>Create Profile</span>
             <div className={`${prefix}-pc-form-container`}>
                 <div className={`${prefix}-pc-input-container`}>

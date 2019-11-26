@@ -20,7 +20,7 @@ export default function Dashboard(props) {
 
     return (
         <Page>
-            <Logo width={'100px'} height={'100px'}/>
+            <Logo width={'7rem'} height={'7rem'}/>
             {profileFolder}
             <Button onClick={() => {history.push('/')}}>Go Back</Button>
         </Page>

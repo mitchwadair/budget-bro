@@ -62,7 +62,7 @@ export default function Landing(props) {
 
     return (
         <Page>
-            <Logo width={'100px'} height={'100px'}/>
+            <Logo width={'7rem'} height={'7rem'}/>
             <div className={`${prefix}-landing-page-title`}>Budget Bro</div>
             {content}
         </Page>
