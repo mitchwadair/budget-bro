@@ -3,10 +3,9 @@
 .#{$prefix}-profile-card {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
-    height: 6rem;
-    width: 18rem;
+    min-height: 6rem;
+    min-width: 18rem;
     border: solid .0625rem;
     border-radius: .125rem;
     margin: .5rem 1rem;

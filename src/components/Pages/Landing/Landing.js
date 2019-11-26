@@ -49,8 +49,7 @@ export default function Landing(props) {
     }
 
     const content = profiles === null ? <div className={`${prefix}-landing-page-profiles-container`}>
-            <div style={{padding: '1rem'}}>It looks like there are no budgeting profiles created on this machine!</div>
-            <Button onClick={buttonOnClick}>Create a Profile</Button>
+            <ProfileCard onClick={buttonOnClick} profileFolder={null}/>
         </div> : <div className={`${prefix}-landing-page-profiles-container`}>
             {profiles.map((profile, i) => {
                 return <ProfileCard key={i} onClick={() => {console.log("profile clicked")}} profileFolder={profile}/>;

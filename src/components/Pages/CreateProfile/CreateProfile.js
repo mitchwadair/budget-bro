@@ -53,6 +53,8 @@ export default function CreateProfile(props) {
             if (inputData.annual_income.length !== 0) {
                 if (isNaN(inputData.annual_income)) {
                     newErrorStatus.annual_income = 'This field should be a number';
+                } else if (inputData.annual_income === 0) {
+                    newErrorStatus.annual_income = 'This field should be greater than 0';
                 }
             } else {
                 newErrorStatus.annual_income = 'This field must be filled out';
@@ -61,6 +63,8 @@ export default function CreateProfile(props) {
             if (inputData.hourly_wage.length !== 0) {
                 if (isNaN(inputData.hourly_wage)) {
                     newErrorStatus.hourly_wage = 'This field should be a number';
+                } else if (inputData.hourly_wage === 0) {
+                    newErrorStatus.hourly_wage = 'This field should be greater than 0';
                 }
             } else {
                 newErrorStatus.hourly_wage = 'This field must be filled out';
@@ -68,6 +72,8 @@ export default function CreateProfile(props) {
             if (inputData.work_hours.length !== 0) {
                 if (isNaN(inputData.work_hours)) {
                     newErrorStatus.work_hours = 'This field should be a number';
+                } else if (inputData.work_hours === 0) {
+                    newErrorStatus.work = 'This field should be greater than 0';
                 }
             } else {
                 newErrorStatus.work_hours = 'This field must be filled out';
@@ -95,7 +101,7 @@ export default function CreateProfile(props) {
     const createProfile = () => {
         const newErrorStatus = {};
         const dataDir = path.join(remote.app.getAppPath(), "data");
-        const newDirName = inputData.profile_name.toLowerCase().replace(new RegExp(' ', 'g'), '_');
+        const newDirName = inputData.profile_name.toLowerCase().replace(new RegExp(' ', 'g'), '_').replace(/[/\\?%*:|"<>]/g, '');
         const profileDir = path.join(dataDir, newDirName);
         if (fs.existsSync(profileDir)) {
             devLog("profile directory already exists");
@@ -138,6 +144,7 @@ export default function CreateProfile(props) {
                 }
                 const filePath = path.join(profileDir, "profile_data.json");
                 fs.writeFileSync(filePath, JSON.stringify(profileData, null, 4));
+                history.push("/");
             }).catch((error) => {
                 devLog(error);
             });
@@ -150,9 +157,7 @@ export default function CreateProfile(props) {
         const inputErrors = validateInput();
         if (inputErrors === null) {
             const profileErrors = createProfile();
-            if (profileErrors === null) {
-                history.push("/");
-            } else {
+            if (profileErrors !== null) {
                 devLog(profileErrors);
                 setErrorStatus(profileErrors);
             }
