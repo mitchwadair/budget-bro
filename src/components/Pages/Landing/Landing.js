@@ -10,7 +10,6 @@ import settings from '../../../settings';
 
 import Page from '../Page';
 import Logo from '../../Logo/Logo';
-import Button from '../../Button/Button';
 import ProfileCard from '../../ProfileCard/ProfileCard';
 
 const {prefix} = settings;
