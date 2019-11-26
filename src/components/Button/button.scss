@@ -8,8 +8,8 @@
     top: 0;
     left: 0;
     padding: .5rem;
-    margin-left: .25rem;
-    margin-right: 1rem;
+    margin-left: .4375rem;
+    margin-right: .5625rem;
     border-radius: .25rem;
     border-style: none;
 
@@ -20,8 +20,8 @@
     }
 
     &:focus, &:active {
-        top: 1px;
-        left: 1px;
+        top: .125rem;
+        left: .125rem;
         @include themify($themes) {
             background-color: themed('color-secondary');
             box-shadow: 0 0 themed('color-shadow');

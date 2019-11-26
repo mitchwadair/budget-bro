@@ -199,7 +199,7 @@ export default function CreateProfile(props) {
     return (
         <Page>
             <Logo width={'100px'} height={'100px'}/>
-            Create Profile
+            <span style={{textAlign: 'center'}}>Create Profile</span>
             <div className={`${prefix}-pc-form-container`}>
                 <div className={`${prefix}-pc-input-container`}>
                     <Notification type="error" closable={false} isVisible={isErrorPresent('profile_name')}>{errorStatus.profile_name}</Notification>
@@ -211,7 +211,7 @@ export default function CreateProfile(props) {
                 <div className={`${prefix}-pc-input-container`}>
                     {incomeInput}
                     <Notification type="error" closable={false} isVisible={isErrorPresent('additional_income')}>{errorStatus.additional_income}</Notification>
-                    <TextInput label="Expected Additional Income" defaultValue={0} onChange={updateInputData} id="additional_income"/>
+                    <TextInput label="Expected Extra Income" defaultValue={0} onChange={updateInputData} id="additional_income"/>
                     <Notification type="error" closable={false} isVisible={isErrorPresent('retirement_percent')}>{errorStatus.retirement_percent}</Notification>
                     <TextInput label="401k Contribution %" defaultValue={0} onChange={updateInputData} id="retirement_percent"/>
                     <Notification type="error" closable={false} isVisible={isErrorPresent('hsa_cont')}>{errorStatus.hsa_cont}</Notification>
