@@ -7,6 +7,7 @@ import Content from './components/Content/Content.js'
 
 import Landing from './components/Pages/Landing/Landing';
 import CreateProfile from './components/Pages/CreateProfile/CreateProfile';
+import Dashboard from './components/Pages/Dashboard/Dashboard';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -23,6 +24,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={Landing}/>
             <Route path='/createProfile' component={CreateProfile}/>
+            <Route path='/dashboard/:id' component={Dashboard}/>
           </Switch>
         </Router>
       </Content>

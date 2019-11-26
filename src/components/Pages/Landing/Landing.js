@@ -47,11 +47,15 @@ export default function Landing(props) {
         history.push("/createProfile");
     }
 
+    const profileClick = (profile) => {
+        history.push(`/dashboard/${profile}`)
+    }
+
     const content = profiles === null ? <div className={`${prefix}-landing-page-profiles-container`}>
             <ProfileCard onClick={buttonOnClick} profileFolder={null}/>
         </div> : <div className={`${prefix}-landing-page-profiles-container`}>
             {profiles.map((profile, i) => {
-                return <ProfileCard key={i} onClick={() => {console.log("profile clicked")}} profileFolder={profile}/>;
+                return <ProfileCard key={i} onClick={() => {profileClick(profile)}} profileFolder={profile}/>;
             })}
             <ProfileCard onClick={buttonOnClick} profileFolder={null}/>
         </div>;
