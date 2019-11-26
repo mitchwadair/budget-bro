@@ -1,2 +1,21 @@
 @import '../../../scss/util/variables.scss';
 
+.#{$prefix}-dashboard-title {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    
+    span {
+        margin: .5rem 0;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+}
+
+.#{$prefix}-dashboard-name {
+
+}
+
+.#{$prefix}-dashboard-date {
+    
+}
